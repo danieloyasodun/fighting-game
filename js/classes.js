@@ -112,6 +112,14 @@ class Fighter extends Sprite {
             this.attackBox.width, 
             this.attackBox.height
         )*/
+        if (this.position.x < 0) {
+            this.position.x = 0;
+        } else if (this.position.x + this.width * this.scale > canvas.width) {
+            this.position.x = canvas.width - this.width * this.scale;
+        }
+        if (this.position.y < 0) {
+            this.position.y = 0;
+        }
 
         this.position.x += this.velocity.x
         this.position.y += this.velocity.y
